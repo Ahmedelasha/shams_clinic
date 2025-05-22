@@ -1,3 +1,4 @@
+/* Base Styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -17,6 +18,7 @@ header {
   color: white;
   padding: 30px 20px;
   text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   position: relative;
 }
 
@@ -49,11 +51,13 @@ nav a:hover {
 }
 
 .container {
+  width: 100%;
   max-width: 1000px;
   margin: 40px auto;
   padding: 30px;
   background-color: #ffffff;
   border-radius: 12px;
+  box-sizing: border-box;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
@@ -61,26 +65,7 @@ body.night .container {
   background-color: #1e1e1e;
 }
 
-.intro {
-  text-align: center;
-  font-size: 1.1rem;
-}
-
-.call-now {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.call-btn {
-  background-color: #046a37;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-h2, .faq h3 {
+h2 {
   text-align: center;
   color: #2e7d32;
 }
@@ -172,6 +157,7 @@ button {
   font-weight: bold;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -186,15 +172,32 @@ footer {
   margin-top: 50px;
 }
 
+footer a {
+  color: #c8e6c9;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.socials {
+  margin-top: 10px;
+}
+
 .socials a {
   margin: 0 10px;
   color: #c8e6c9;
   text-decoration: none;
-  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.socials a:hover {
-  text-decoration: underline;
+.socials img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
 }
 
 .doctor-profile {
@@ -242,6 +245,14 @@ body.night .quote {
   color: #ccc;
 }
 
+.faq {
+  margin-top: 40px;
+}
+
+.faq h3 {
+  color: #2e7d32;
+}
+
 .faq-item {
   margin-bottom: 15px;
 }
@@ -255,17 +266,48 @@ body.night .quote {
 body.night .faq-item strong {
   color: #81c784;
 }
-#scroll-button{
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    background-color: rgba(250, 249, 249, 0.851);
-    border: none;
-    border-radius: 50%;
-    
+
+.call-button {
+  background-color: #134a4e;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
 }
 
-#scroll-button img{
-    width: 25px;
-    height: 30px;
+/* Responsive: Mobile First Adjustments */
+@media (max-width: 600px) {
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  header {
+    padding: 20px 10px;
+  }
+
+  #toggleMode {
+    position: static;
+    margin-top: 10px;
+  }
+
+  .doctor-profile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-item img {
+    max-width: 100%;
+  }
+
+  form {
+    padding: 15px;
+  }
+
+  .call-button {
+    font-size: 1rem;
+    padding: 10px 18px;
+  }
 }
